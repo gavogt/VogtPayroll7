@@ -60,6 +60,7 @@ namespace VogtPayroll7
             Console.WriteLine("Please select 'c' to get a count of employees");
             Console.WriteLine("Please select 'b' to get the total bonus amount for all employees");
             Console.WriteLine("Please select 'e' to get the average bonus amount for all employees");
+            Console.WriteLine("Please select 'q' to quit");
         }
 
     }

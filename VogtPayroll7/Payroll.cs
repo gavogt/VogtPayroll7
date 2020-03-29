@@ -7,27 +7,27 @@ namespace VogtPayroll7
     class Payroll
     {
         private List<Employee> _employees = new List<Employee>();
-        private decimal totalAmount = 0m;
 
         public void AddEmployees(List<Employee> empList)
         {
             _employees.AddRange(empList);
         }
 
-        public void GetEmployeeCount()
+        public int GetEmployeeCount()
         {
             Console.WriteLine($"Employee count is: {_employees.Count}");
+            return _employees.Count;
         }
 
-        public void GetBonusAmount(int bonusYears)
+        public void GetBonusAmount()
         {
             foreach (var employee in _employees)
             {
-                if (employee.YearsOfService >= 1 || employee.YearsOfService <= 4)
+                if (employee.YearsOfService >= 1 && employee.YearsOfService <= 4)
                 {
                     employee.BonusAmount = 100m;
                 }
-                else if (employee.YearsOfService >= 4 || employee.YearsOfService <= 9)
+                else if (employee.YearsOfService >= 4 && employee.YearsOfService <= 9)
                 {
                     employee.BonusAmount = 500m;
                 }
@@ -44,6 +44,10 @@ namespace VogtPayroll7
 
         public decimal GetTotalAmountAwardedForAllEmployees()
         {
+            decimal totalAmount = 0m;
+
+            GetBonusAmount();
+
             foreach (var employee in _employees)
             {
                 totalAmount += employee.BonusAmount;
@@ -56,7 +60,8 @@ namespace VogtPayroll7
 
         public void GetAverageBonusAmountForAllEmployees()
         {
-            Console.WriteLine($"Average bonus amount: {GetTotalAmountAwardedForAllEmployees() % 2:C2}");
+            
+            Console.WriteLine($"Average bonus amount: {GetTotalAmountAwardedForAllEmployees() % GetEmployeeCount():C2}");
         }
     }
 }
