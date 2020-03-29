@@ -61,7 +61,7 @@ namespace VogtPayroll7
         public void GetAverageBonusAmountForAllEmployees()
         {
             
-            Console.WriteLine($"Average bonus amount: {GetTotalAmountAwardedForAllEmployees() % GetEmployeeCount():C2}");
+            Console.WriteLine($"Average bonus amount: {GetTotalAmountAwardedForAllEmployees() / GetEmployeeCount():C2}");
         }
     }
 }
