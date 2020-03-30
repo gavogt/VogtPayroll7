@@ -8,7 +8,7 @@ namespace VogtPayroll7
     {
         private string _empName;
 
-        public int YearsOfService { get; set; }
+        public int YearsOfService { get; }
         public decimal EasterBonusAmount { get; set; }
 
         public Employee(string empName, int yearsOfService)
