@@ -9,6 +9,12 @@ namespace VogtPayroll7
         private readonly Payroll _payroll;
         private readonly PayrollConsoleReader _payrollConsoleReader;
 
+        public PayrollController(Payroll payroll, PayrollConsoleReader payrollConsoleReader)
+        {
+            _payroll = payroll;
+            _payrollConsoleReader = payrollConsoleReader;
+        }
+
         public void AddEmployees()
         {
             _payroll.AddEmployees(_payrollConsoleReader.GetEmployees());
