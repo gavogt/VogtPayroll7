@@ -15,6 +15,10 @@ namespace VogtPayroll7
             _payroll = payroll;
         }
 
+        #region PrintMenu
+        /// <summary>
+        /// Prints the main menu
+        /// </summary>
         public void PrintMenu()
         {
             char option;
@@ -51,8 +55,14 @@ namespace VogtPayroll7
                 }
 
             } while (option != 'q');
-        }
 
+        }
+        #endregion
+
+        #region PrintMenuOptions
+        /// <summary>
+        /// Prints out the menu options
+        /// </summary>
         public void PrintMenuOptions()
         {
             Console.WriteLine();
@@ -61,7 +71,9 @@ namespace VogtPayroll7
             Console.WriteLine("Please select 'b' to get the total bonus amount for all employees");
             Console.WriteLine("Please select 'e' to get the average bonus amount for all employees");
             Console.WriteLine("Please select 'q' to quit");
+
         }
+        #endregion
 
     }
 }

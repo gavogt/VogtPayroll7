@@ -6,6 +6,11 @@ namespace VogtPayroll7
 {
     class PayrollConsoleReader
     {
+        #region GetEmployee
+        /// <summary>
+        /// Creation of an employee
+        /// </summary>
+        /// <returns>The newly created employee</returns>
         public Employee GetEmployee()
         {
             Console.WriteLine();
@@ -19,7 +24,13 @@ namespace VogtPayroll7
             return new Employee(empName, yearsOfService);
 
         }
+        #endregion
 
+        #region GetEmployees
+        /// <summary>
+        /// Asks how many employees would like to be added
+        /// </summary>
+        /// <returns>A list of the newly created employee</returns>
         public List<Employee> GetEmployees()
         {
             PayrollConsoleReader payrollConsoleReader = new PayrollConsoleReader();
@@ -40,6 +51,8 @@ namespace VogtPayroll7
             }
 
             return empList;
+
         }
+        #endregion
     }
 }
