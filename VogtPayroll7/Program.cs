@@ -6,7 +6,16 @@ namespace VogtPayroll7
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Run(new PayrollDisplay(new PayrollController(new Payroll(), new PayrollConsoleReader())));
+        }
+
+        public static void Run(PayrollDisplay payrollDisplay)
+        {
+            payrollDisplay.PrintMenu();
+            Console.Clear();
+            Console.WriteLine("Exiting...");
+            Environment.Exit(0);
+
         }
     }
 }
