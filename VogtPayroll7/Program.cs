@@ -6,7 +6,7 @@ namespace VogtPayroll7
     {
         static void Main(string[] args)
         {
-             Run(new PayrollDisplay(new PayrollConsoleReader(), new Payroll()));
+             Run(new PayrollDisplay(new PayrollController()));
         }
 
         public static void Run(PayrollDisplay payrollDisplay)

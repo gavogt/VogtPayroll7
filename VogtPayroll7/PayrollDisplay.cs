@@ -6,13 +6,12 @@ namespace VogtPayroll7
 {
     class PayrollDisplay
     {
-        private readonly PayrollConsoleReader _payrollConsoleReader;
-        private readonly Payroll _payroll;
+        private readonly PayrollController _payrollController;
 
-        public PayrollDisplay(PayrollConsoleReader payrollConsoleReader, Payroll payroll)
+        public PayrollDisplay(PayrollController payrollController)
         {
-            _payrollConsoleReader = payrollConsoleReader;
-            _payroll = payroll;
+            _payrollController = payrollController;
+
         }
 
         #region PrintMenu
@@ -32,19 +31,19 @@ namespace VogtPayroll7
                 switch (option)
                 {
                     case 'a':
-                        _payroll.AddEmployees(_payrollConsoleReader.GetEmployees());
+                        _payrollController.AddEmployees();
                         break;
                     case 'c':
                         // Total count of employees entered
-                        _payroll.GetEmployeeCount();
+                        _payrollController.TotalCountOfEmployees();
                         break;
                     case 'b':
                         // Total bonus amount awarded for all employees entered
-                        _payroll.GetTotalAmountAwardedForAllEmployees();
+                        _payrollController.TotalAmountAwardedForAllEmployees();
                         break;
                     case 'e':
                         // Average bonus amount for all employees
-                        _payroll.GetAverageBonusAmountForAllEmployees();
+                        _payrollController.AverageBonusAmountForAllEmployees();
                         break;
                     case 'q':
                         // Don't do anything
